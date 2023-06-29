@@ -1,0 +1,85 @@
+{% extends 'base2.html' %}
+
+{% block title %} Received Challan {% endblock title %}
+
+{% block body %}
+
+<div style="margin:-3% 20% 0% 20%;padding: 2% 2%;background-color:white;border-radius:12px;box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+
+    <h2>Received Challan</h2>
+    <br>
+
+    <form class="row g-3" method='post' action='/handleReceivedChallan'>
+
+        {% csrf_token %}
+
+        <div class="col-6">
+            <label for="challanno_1" class="form-label">Challan No</label>
+            <input type="number" class="form-control" id="challanno_1" name="challanno_1" placeholder="Challan No(Customer)"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="date_1" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date_1" name="date_1" placeholder="Date"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="particulars" class="form-label">Particulars</label>
+            <input type="text" class="form-control" id="particulars" name="particulars" placeholder="Particulars"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Quantity(Q)"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="weight" class="form-label">Weight</label>
+            <input type="text" class="form-control" id="weight" name="weight" placeholder="Weight(Kg)">
+        </div>
+        <div class="col-3">
+            <label for="rate" class="form-label">Rate</label>
+            <input type="text" class="form-control" id="rate" name="rate" placeholder="Rate(R)">
+        </div>
+        <div class="col-3">
+            <label for="total" class="form-label">Total</label>
+            <input type="text" class="form-control" id="total" name="total" placeholder="Total(Q x R)">
+        </div>
+        <div class="col-6">
+            <label for="challanno_2" class="form-label">ChallanNo</label>
+            <input type="number" class="form-control" id="challanno_2" name="challanno_2" placeholder="ChallanNo(Supplier)"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="date_2" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date_2" name="date_2" placeholder="Date"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="returned_quantity" class="form-label">Returned Quantity</label>
+            <input type="number" class="form-control" id="returned_quantity" name="returned_quantity" placeholder="Returned Quantity"
+                required>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary" style="background-color:black">Submit</button>
+        </div>
+        <div class="col-1">
+            <button type="reset" class="btn btn-primary" style="background-color:black">Reset</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock body %}
+
+
+

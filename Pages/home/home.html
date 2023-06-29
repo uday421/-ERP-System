@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Home {% endblock title %}
+
+{% block body %}
+
+<a name="PurchaseOrder"></a>
+
+<div class="container">
+    <h1 style="text-align:center;color:white;text-shadow: 2px 2px 4px #000000">Purchase Order</h1>
+    <br>
+  
+    <br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <a href="/PurchaseOrder" style="text-decoration:none;color:black">
+                <div class="card bg-image hover-zoom"
+                    style="box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+                    <img src="{% static 'images/PO1.jpg' %}" class="card-img-top" alt="Purchase Order" height="353px">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size:25px">Purchase Order</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="/CreatedPurchaseOrder" style="text-decoration:none;color:black">
+                <div class="card bg-image hover-zoom"
+                    style="box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+                    <img src="{% static 'images/PO2.jpg' %}" class="card-img-top" alt="Created Purchase Order"
+                        height="353px">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size:25px">Created Purchase Order</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="/ReceivedPurchaseOrder" style="text-decoration:none;color:black">
+                <div class="card bg-image hover-zoom"
+                    style="box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+                    <img src="{% static 'images/PO3.jpg' %}" class="card-img-top" alt="Received Purchase Order"
+                        height="353px">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size:25px">Received Purchase Order</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="/ViewReceivedPurchaseOrder" style="text-decoration:none;color:black">
+                <div class="card bg-image hover-zoom"
+                    style="box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+                    <img src="{% static 'images/PO4.jpg' %}" class="card-img-top" alt="View Received Purchase Order"
+                        height="353px">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size:25px">View Received Purchase Order</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<a name="Invoice"></a>
+<br>
+<br>
+<br>
+<br>
+<div style="background-color:#262626;padding:40px">
+    <div class="container">
+        <h1 style="text-align:center;color:white;text-shadow: 2px 2px 4px #000000">Invoice</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <a href="/Invoice" style="text-decoration:none;color:black">
+                    <div class="card bg-image hover-zoom"
+                        style="box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+                        <img src="{% static 'images/I1.jpg' %}" class="card-img-top" alt=" Invoice" height="353px">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-size:25px">Invoice</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/CreatedInvoice" style="text-decoration:none;color:black">
+                    <div class="card bg-image hover-zoom"
+                        style="box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+                        <img src="{% static 'images/I2.jpg' %}" class="card-img-top" alt="Created Invoice"
+                            height="353px">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-size:25px">Created Invoice</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/ReceivedInvoice" style="text-decoration:none;color:black">
+                    <div class="card bg-image hover-zoom"
+                        style="box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+                        <img src="{% static 'images/I3.jpg' %}" class="card-img-top" alt="Received Invoice"
+                            height="353px">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-size:25px">Received Invoice</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/ViewReceivedInvoice" style="text-decoration:none;color:black">
+                    <div class="card bg-image hover-zoom"
+                        style="box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+                        <img src="{% static 'images/I4.jpg' %}" class="card-img-top" alt="View Received Invoice"
+                            height="353px">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-size:25px">View Received Invoice</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a name="Challan"></a>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <h1 style="text-align:center;color:white;text-shadow: 2px 2px 4px #000000">Challan</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <a href="/Challan" style="text-decoration:none;color:black">
+                <div class="card bg-image hover-zoom"
+                    style="box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+                    <img src="{% static 'images/C1.jpg' %}" class="card-img-top" alt=" Challan" height="353px">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size:25px">Challan</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="/CreatedChallan" style="text-decoration:none;color:black">
+                <div class="card bg-image hover-zoom"
+                    style="box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+                    <img src="{% static 'images/C2.jpg' %}" class="card-img-top" alt="Created Challan" height="353px">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size:25px">Created Challan</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="/ReceivedChallan" style="text-decoration:none;color:black">
+                <div class="card bg-image hover-zoom"
+                    style="box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+                    <img src="{% static 'images/C3.jpg' %}" class="card-img-top" alt="Received Challan" height="353px">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size:25px">Received Challan</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="/ViewReceivedChallan" style="text-decoration:none;color:black">
+                <div class="card bg-image hover-zoom"
+                    style="box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+                    <img src="{% static 'images/C4.jpg' %}" class="card-img-top" alt="View Received Challan"
+                        height="353px">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size:25px">View Received Challan</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+{% endblock body %}

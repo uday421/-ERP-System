@@ -1,0 +1,198 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+  <!-- Separate Popper and Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
+    crossorigin="anonymous"></script>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
+
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+
+  <!-- Title Icon -->
+  <link rel="icon12" href="{% static 'images/IL.jpg' %}">
+
+  <title>{% block title %} {% endblock title %}</title>
+
+</head>
+
+<body
+  style="background-image: url({% static 'images/inner.jpg' %});background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <!--<h2><a class="navbar-brand" href="/home">ERP System</a></h2>-->
+      <img src="{% static 'images/icon12.png' %}" alt="icon12" height="40px" width="50px" style="border-radius:12px">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#PurchaseOrder" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" style="color:white">
+              Purchase Order
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/PurchaseOrder">Purchase Order</a></li>
+              <li><a class="dropdown-item" href="/CreatedPurchaseOrder">Created Purchase Order</a></li>
+              <li><a class="dropdown-item" href="/ReceivedPurchaseOrder">Received Purchase Order</a></li>
+              <li><a class="dropdown-item" href="/ViewReceivedPurchaseOrder">View Received Purchase Order</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#PurchaseOrder" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" style="color:white">
+              Invoice
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/Invoice">Invoice</a></li>
+              <li><a class="dropdown-item" href="/CreatedInvoice">Created Invoice</a></li>
+              <li><a class="dropdown-item" href="/ReceivedInvoice">Received Invoice</a></li>
+              <li><a class="dropdown-item" href="/ViewReceivedInvoice">View Received Invoice</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#PurchaseOrder" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" style="color:white">
+              Challan
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/Challan">Challan</a></li>
+              <li><a class="dropdown-item" href="/CreatedChallan">Created Challan</a></li>
+              <li><a class="dropdown-item" href="/ReceivedChallan">Received Challan</a></li>
+              <li><a class="dropdown-item" href="/ViewReceivedChallan">View Received Challan</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/admin" target="_blank">Edit</a>
+          </li>
+         
+        </ul>
+      </div>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Welcome
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/handleLogout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+  <br>
+  <br>
+  {% for message in messages %}
+  <div class="alert alert-{{message.tags}} mb-0 alert-dismissible fade show" role="alert">
+    <strong>Message:</strong> {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+
+  <a name="top"></a>
+  <br>
+  <br>
+  <div class="container">
+    <a href="#bottom" class="btn btn-primary btn-floating m-1" role="button" title="Go to Bottom"
+      style="background-color: #000000;float: left">
+      <i class="fas fa-angle-double-down fa-3x"></i>
+    </a>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  {% block body %}
+  {%endblock body %}
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <a name="bottom"></a>
+
+  <footer class="bg-dark text-center text-white">
+  
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;"
+          href="https://en-gb.facebook.com/" role="button"><i class="fab fa-facebook-f"></i></a>
+
+        <!-- Twitter -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;"
+          href="https://twitter.com/?lang=en-in" role="button"><i class="fab fa-twitter"></i></a>
+
+        <!-- Google -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="https://www.google.co.in/"
+          role="button"><i class="fab fa-google"></i></a>
+
+        <!-- Instagram -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="https://www.instagram.com/"
+          role="button"><i class="fab fa-instagram"></i></a>
+
+        <!-- Linkedin -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="https://in.linkedin.com/"
+          role="button"><i class="fab fa-linkedin-in"></i></a>
+        <!-- Github -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="https://github.com/"
+          role="button"><i class="fab fa-github"></i>
+        </a>
+
+        <a href="#top" class="btn btn-primary btn-floating m-1" role="button" title="Go to Top"
+          style="background-color: #262626;float: right">
+          <i class="fas fa-angle-double-up fa-3x"></i>
+        </a>
+
+      </section>
+      <!-- Section: Social media -->
+
+    </div>
+    <!-- Grid container -->
+
+    <div style="background-color:black;padding:20px">© 2023 ERP Solutions. All Rights Reserved | Design By
+      Vaishanvi Ahire || Uday Badgujar || Nimesh Patel || Nilesh Chaudhari</div>
+    <!-- Copyright -->
+  </footer>
+
+</body>
+
+</html>

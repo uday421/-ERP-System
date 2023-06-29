@@ -1,0 +1,50 @@
+{% extends 'base2.html' %}
+
+{% block title %} Created Challan {% endblock title %}
+
+{% block body %}
+
+<div style="margin:-3% 15% 0% 15%;padding: 3% 0%;background-color:white;border-radius:12px;box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+
+    <h1 style="text-align:center">Challan</h1>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ChallanNo</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Particulars</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+            </thead>
+            <tbody style="font-size:20px">
+                <tr>
+                    <th scope="row">{{challan.0.ChallanNo}}</th>
+                    <td>{{challan.0.Date}}</td>
+                    <td>{{challan.0.ChallanTo}}</td>
+                    <td>{{challan.0.Particulars}}</td>
+                    <td>{{challan.0.Quantity}}</td>
+                </tr>
+
+                {% for i in challan|slice:"1:"%}
+                <tr>
+                    <th scope="row">{{i.ChallanNo}}</th>
+                    <td>{{i.Date}}</td>
+                    <td>{{i.ChallanTo}}</td>
+                    <td>{{i.Particulars}}</td>
+                    <td>{{i.Quantity}}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{% endblock body %}

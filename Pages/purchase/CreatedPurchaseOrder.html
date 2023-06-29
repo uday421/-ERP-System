@@ -1,0 +1,98 @@
+{% extends 'base2.html' %}
+
+{% block title %} Created Purchase Order {% endblock title %}
+
+{% block body %}
+
+<div style="margin:-3% 15% 0% 15%;padding: 3% 0%;background-color:white;border-radius:12px;box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+
+    <h1 style="text-align:center">Purchase Order</h1>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+
+        <div class="table table-responsive table-hover">
+            <table class="table">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Purchase Order No</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Order To</th>
+                        <th scope="col">Ship to</th>
+                        <th scope="col">Delivery Terms</th>
+                        <th scope="col">Mode Terms Of Payment</th>
+                        <th scope="col">Supplier Reference</th>
+                        <th scope="col">Other Reference</th>
+                        <th scope="col">Despatched Through</th>
+                        <th scope="col">Particulars Code</th>
+                        <th scope="col">Particulars</th>
+                        <th scope="col">Quantity(Q)</th>
+                        <th scope="col">Rate(R)</th>
+                        <th scope="col">Amount(QxR=A)</th>
+                        <th scope="col">Discount(%)</th>
+                        <th scope="col">Amount Less Discount(ALD)</th>
+                        <th scope="col">GST</th>
+                        <th scope="col">Shipping Handling Charges</th>
+                        <th scope="col">Total(A+ALD+GST)</th>
+                    </tr>
+                </thead>
+                <tbody style="font-size:15px">
+                    <tr>
+                        <th scope="row">{{purchase_order.0.Purchase_Order_No}}</th>
+                        <td>{{purchase_order.0.Date}}</td>
+                        <td>{{purchase_order.0.Order_To}}</td>
+                        <td>{{purchase_order.0.Ship_To}}</td>
+                        <td>{{purchase_order.0.Delivery_Terms}}</td>
+                        <td>{{purchase_order.0.Mode_Terms_Of_Payment}}</td>
+                        <td>{{purchase_order.0.Supplier_Reference}}</td>
+                        <td>{{purchase_order.0.Other_Reference}}</td>
+                        <td>{{purchase_order.0.Despatched_Through}}</td>
+                        <td>{{purchase_order.0.Particulars_Code}}</td>
+                        <td>{{purchase_order.0.Particulars}}</td>
+                        <td>{{purchase_order.0.Quantity}}</td>
+                        <td>{{purchase_order.0.Rate}}</td>
+                        <td>{{purchase_order.0.Amount}}</td>
+                        <td>{{purchase_order.0.Discount}}</td>
+                        <td>{{purchase_order.0.Amount_Less_Discount}}</td>
+                        <td>{{purchase_order.0.GST}}</td>
+                        <td>{{purchase_order.0.Shipping_Handling_Charges}}</td>
+                        <td>{{purchase_order.0.Total}}</td>
+                    </tr>
+
+                    {% for i in purchase_order|slice:"1:"%}
+                    <tr>
+                        <th scope="row">{{i.Purchase_Order_No}}</th>
+                        <td>{{i.Date}}</td>
+                        <td>{{i.Order_To}}</td>
+                        <td>{{i.Ship_To}}</td>
+                        <td>{{i.Delivery_Terms}}</td>
+                        <td>{{i.Mode_Terms_Of_Payment}}</td>
+                        <td>{{i.Supplier_Reference}}</td>
+                        <td>{{i.Other_Reference}}</td>
+                        <td>{{i.Despatched_Through}}</td>
+                        <td>{{i.Particulars_Code}}</td>
+                        <td>{{i.Particulars}}</td>
+                        <td>{{i.Quantity}}</td>
+                        <td>{{i.Rate}}</td>
+                        <td>{{i.Amount}}</td>
+                        <td>{{i.Discount}}</td>
+                        <td>{{i.Amount_Less_Discount}}</td>
+                        <td>{{i.GST}}</td>
+                        <td>{{i.Shipping_Handling_Charges}}</td>
+                        <td>{{i.Total}}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock body %}

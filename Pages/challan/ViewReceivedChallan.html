@@ -1,0 +1,70 @@
+{% extends 'base2.html' %}
+
+{% block title %} View Received Challan {% endblock title %}
+
+{% block body %}
+
+<div style="margin:-4% 6% 0% 9%;padding: 3% 0%;background-color:white;border-radius:12px;box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+
+    <h1 style="text-align:center">Received Challan</h1>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ChallanNo(Customer)</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Particulars</th>
+                    <th scope="col">Quantity(Q)</th>
+                    <th scope="col">Weight(Kg)</th>
+                    <th scope="col">Rate(R)</th>
+                    <th scope="col">Total(Q x R)</th>
+                    <th scope="col">ChallanNo(Supplier)</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Returned Quantity</th>
+                </tr>
+            </thead>
+            <tbody style="font-size:15px">
+                <tr>
+                    <th scope="row">{{received_challan.0.ChallanNo_1}}</th>
+                    <td>{{received_challan.0.Date_1}}</td>
+                    <td>{{received_challan.0.Subject}}</td>
+                    <td>{{received_challan.0.Particulars}}</td>
+                    <td>{{received_challan.0.Quantity}}</td>
+                    <td>{{received_challan.0.Weight}}</td>
+                    <td>{{received_challan.0.Rate}}</td>
+                    <td>{{received_challan.0.Total}}</td>
+                    <td>{{received_challan.0.ChallanNo_2}}</td>
+                    <td>{{received_challan.0.Date_2}}</td>
+                    <td>{{received_challan.0.Returned_Quantity}}</td>
+                </tr>
+
+                {% for i in received_challan|slice:"1:" %}
+                <tr>
+                    <th scope="row">{{i.ChallanNo_1}}</th>
+                    <td>{{i.Date_1}}</td>
+                    <td>{{i.Subject}}</td>
+                    <td>{{i.Particulars}}</td>
+                    <td>{{i.Quantity}}</td>
+                    <td>{{i.Weight}}</td>
+                    <td>{{i.Rate}}</td>
+                    <td>{{i.Total}}</td>
+                    <td>{{i.ChallanNo_2}}</td>
+                    <td>{{i.Date_2}}</td>
+                    <td>{{i.Returned_Quantity}}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock body %}

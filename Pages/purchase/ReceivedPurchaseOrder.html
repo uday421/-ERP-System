@@ -1,0 +1,129 @@
+{% extends 'base2.html' %}
+
+{% block title %} Received Purchase Order {% endblock title %}
+
+{% block body %}
+
+<div style="margin:-3% 20% 0% 20%;padding: 2% 2%;background-color:white;border-radius:12px;box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+
+    <h2>Received Purchase Order</h2>
+    <br>
+
+    <form class="row g-3" method='post' action='/handleReceivedPurchaseOrder'>
+
+        {% csrf_token %}
+
+        <div class="col-6">
+            <label for="pono" class="form-label">Purchase Order No</label>
+            <input type="number" class="form-control" id="pono" name="pono" placeholder="Purchase Order No"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" name="date" placeholder="Date"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="invoiceto" class="form-label">Invoice To</label>
+            <input type="text" class="form-control" id="invoiceto" name="invoiceto" placeholder="Invoice To"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="shipto" class="form-label">Ship To</label>
+            <input type="text" class="form-control" id="shipto" name="shipto" placeholder="Ship To"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="dt" class="form-label">Delivery Terms</label>
+            <input type="text" class="form-control" id="dt" name="dt" placeholder="Delivery Terms"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="mtop" class="form-label">Mode Terms of Payment</label>
+            <input type="text" class="form-control" id="mtop" name="mtop" placeholder="Mode Terms of Payment"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="suppref" class="form-label">Supplier Reference</label>
+            <input type="text" class="form-control" id="suppref" name="suppref" placeholder="Supplier Reference"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="otherref" class="form-label">Other Reference</label>
+            <input type="text" class="form-control" id="otherref" name="otherref" placeholder="Other Reference"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="dthrough" class="form-label">Despatched Through</label>
+            <input type="text" class="form-control" id="dthrough" name="dthrough" placeholder="Despatched Through"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="pc" class="form-label">Particulars Code</label>
+            <input type="text" class="form-control" id="pc" name="pc" placeholder="Particulars Code"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="particulars" class="form-label">Particulars</label>
+            <input type="text" class="form-control" id="particulars" name="particulars" placeholder="Particulars"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Quantity(Q)"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="rate" class="form-label">Rate</label>
+            <input type="text" class="form-control" id="rate" name="rate" placeholder="Rate(R)"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="amount" class="form-label">Amount</label>
+            <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount(Q x R = A)"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="discount" class="form-label">Discount</label>
+            <input type="text" class="form-control" id="discount" name="discount" placeholder="Discount"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="ald" class="form-label">Amount Less Discount</label>
+            <input type="text" class="form-control" id="ald" name="ald" placeholder="Amount Less Discount"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="gst" class="form-label">GST</label>
+            <input type="text" class="form-control" id="gst" name="gst" placeholder="GST"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="shc" class="form-label">Shipping Handling Charges</label>
+            <input type="text" class="form-control" id="shc" name="shc" placeholder="Shipping Handling Charges"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="total" class="form-label">Total</label>
+            <input type="text" class="form-control" id="total" name="total" placeholder="Total(A + GST + HSA + GST)"
+                required>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary" style="background-color:black">Submit</button>
+        </div>
+        <div class="col-1">
+            <button type="reset" class="btn btn-primary" style="background-color:black">Reset</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock body %}
+
+
+
+

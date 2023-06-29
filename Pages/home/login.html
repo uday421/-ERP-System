@@ -1,0 +1,51 @@
+{% extends 'base3.html' %}
+
+{% load static %}
+
+{% block title %} LogIn {% endblock title %}
+
+
+{% block body %}
+
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} mb-0 alert-dismissible fade show" role="alert">
+    <strong>Message:</strong> {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<br>
+
+<br>
+<h1 style="text-align:center;color:#1a1a1a"><b><u>ERP Solutions</u></b></h1>
+
+<div style="margin:5% 37% 0% 37%;padding: 2% 2%;background-color:white;border-radius:12px;box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+
+    <h2>LogIn</h2>
+    <br>
+
+    <form class="row g-3" action='/handleLogin' method='post'>
+
+        {% csrf_token %}
+
+        <div class="col-12">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="Username"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Password"
+                required>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" style="background-color:black">Log in</button>
+        </div>
+        <div class="col-12">
+            <p>Not a member?<a href="/signin">SignIn</a></p>
+        </div>
+    </form>
+
+</div>
+
+{% endblock body %}

@@ -1,0 +1,93 @@
+{% extends 'base2.html' %}
+
+{% block title %} Invoice {% endblock title %}
+
+{% block body %}
+
+<div style="margin:-3% 20% 0% 20%;padding: 2% 2%;background-color:white;border-radius:12px;box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+
+    <h2>Invoice</h2>
+    <br>
+
+    <form class="row g-3" method='post' action='/handleInvoice'>
+
+        {% csrf_token %}
+
+        <div class="col-6">
+            <label for="invoiceno" class="form-label">Invoice No</label>
+            <input type="number" class="form-control" id="invoiceno" name="invoiceno" placeholder="Invoice No"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="date_1" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date_1" name="date_1" placeholder="Date"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="invoiceto" class="form-label">Customer</label>
+            <input type="text" class="form-control" id="invoiceto" name="invoiceto" placeholder="Customer"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="orderno" class="form-label">Order No</label>
+            <input type="number" class="form-control" id="orderno" name="orderno" placeholder="Order No"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="date_2" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date_2" name="date_2" placeholder="Date"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="particulars" class="form-label">Particulars</label>
+            <input type="text" class="form-control" id="particulars" name="particulars" placeholder="Particulars"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="challanno" class="form-label">Challan No</label>
+            <input type="number" class="form-control" id="challanno" name="challanno" placeholder="Challan No"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Quantity(Q)"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="rate" class="form-label">Rate</label>
+            <input type="text" class="form-control" id="rate" name="rate" placeholder="Rate(R)"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="amount" class="form-label">Amount</label>
+            <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount(Q x R = A)"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="gst" class="form-label">GST</label>
+            <input type="text" class="form-control" id="gst" name="gst" placeholder="GST(18%)"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="total" class="form-label">Total</label>
+            <input type="text" class="form-control" id="total" name="total" placeholder="Total(A + GST)"
+                required>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary" style="background-color:black">Submit</button>
+        </div>
+        <div class="col-1">
+            <button type="reset" class="btn btn-primary" style="background-color:black">Reset</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock body %}
+
+
+

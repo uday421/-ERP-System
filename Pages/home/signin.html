@@ -1,0 +1,72 @@
+{% extends 'base3.html' %}
+
+{% load static %}
+
+{% block title %} SignIn {% endblock title %}
+
+
+{% block body %}
+
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} mb-0 alert-dismissible fade show" role="alert">
+    <strong>Message:</strong> {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+<br>
+
+<h1 style="text-align:center;color:#1a1a1a"><b><u>ERP Solutions</u></b></h1>
+
+<div style="margin:3% 35% 0% 35%;padding: 2% 2%;background-color:white;border-radius:12px;box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+
+    <h2>SignIn</h2>
+    <br>
+
+
+    <form class="row g-3" action='/handleSignin' method='post'>
+
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="fname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
+        </div>
+        <div class="form-group">
+            <label for="lname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
+        </div>
+        <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username"
+                placeholder="Username should contain only alphabets & less than 10 characters" required>
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password"
+                placeholder="Password should be equal or more than 8 characters" required>
+        </div>
+        <div class="form-group">
+            <label for="confirmpassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmpassword" name="confirmpassword"
+                placeholder="Confirm Password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" style="background-color:black">Sign in</button>
+        </div>
+        <div class="form-group">
+            <p>Already a member?<a href="/">LogIn</a></p>
+        </div>
+    </form>
+    
+</div>
+<br>
+    <br>
+    <br>
+    <br>
+    
+
+{% endblock body %}

@@ -1,0 +1,143 @@
+{% extends 'base2.html' %}
+
+{% block title %} Received Invoice {% endblock title %}
+
+{% block body %}
+
+<div style="margin:-3% 20% 0% 20%;padding: 2% 2%;background-color:white;border-radius:12px;box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+
+    <h2>Received Invoice</h2>
+    <br>
+
+    <form class="row g-3" method='post' action='/handleReceivedInvoice'>
+
+        {% csrf_token %}
+
+        <div class="col-12">
+            <label for="invoiceno" class="form-label">Invoice No</label>
+            <input type="text" class="form-control" id="invoiceno" name="invoiceno" placeholder="Invoice No"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="supplier" class="form-label">Supplier</label>
+            <input type="text" class="form-control" id="supplier" name="supplier" placeholder="Supplier"
+                required>
+        </div>
+        <div class="col-4">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" name="date" placeholder="Date"
+                required>
+        </div>
+        <div class="col-4">
+            <label for="delivery_note" class="form-label">Delivery Note</label>
+            <input type="text" class="form-control" id="delivery_note" name="delivery_note" placeholder="Delivery Note"
+                required>
+        </div>
+        <div class="col-4">
+            <label for="mtop" class="form-label">Mode Terms of Payment</label>
+            <input type="text" class="form-control" id="mtop" name="mtop" placeholder="Mode Terms of Payment"
+                required>
+        </div>
+        <div class="col-4">
+            <label for="suppref" class="form-label">Supplier Reference</label>
+            <input type="text" class="form-control" id="suppref" name="suppref" placeholder="Supplier Reference"
+                required>
+        </div>
+        <div class="col-4">
+            <label for="otherref" class="form-label">Other Reference</label>
+            <input type="text" class="form-control" id="otherref" name="otherref" placeholder="Other Reference"
+                required>
+        </div>
+        <div class="col-4">
+            <label for="orderno" class="form-label">Order No</label>
+            <input type="text" class="form-control" id="orderno" name="orderno" placeholder="Order No"
+                required>
+        </div>
+        <div class="col-4">
+            <label for="dnd" class="form-label">Delivery Note Date</label>
+            <input type="date" class="form-control" id="dnd" name="dnd" placeholder="Delivery Note Date"
+                required>
+        </div>
+        <div class="col-4">
+            <label for="ddn" class="form-label">Despatched Document No.</label>
+            <input type="text" class="form-control" id="ddn" name="ddn" placeholder="Despatched Document No."
+                required>
+        </div>
+        <div class="col-4">
+            <label for="dt" class="form-label">Despatched Through</label>
+            <input type="text" class="form-control" id="dt" name="dt" placeholder="Despatched Through"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="tod" class="form-label">Terms of Delivery</label>
+            <input type="text" class="form-control" id="tod" name="tod" placeholder="Terms of Delivery"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="particulars" class="form-label">Particulars</label>
+            <input type="text" class="form-control" id="particulars" name="particulars" placeholder="Particulars"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="hsnsac" class="form-label">HSN/SAC</label>
+            <input type="text" class="form-control" id="hsnsac" name="hsnsac" placeholder="HSN/SAC"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Quantity(Q)"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="rate" class="form-label">Rate</label>
+            <input type="text" class="form-control" id="rate" name="rate" placeholder="Rate(R)"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="amount" class="form-label">Amount</label>
+            <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount(Q x R = A)"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="gst_1" class="form-label">GST</label>
+            <input type="text" class="form-control" id="gst_1" name="gst_1" placeholder="GST"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="hsa" class="form-label">HSN/SAC Amount</label>
+            <input type="text" class="form-control" id="hsa" name="hsa" placeholder="HSN/SAC Amount(HSA)"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="gst_2" class="form-label">GST</label>
+            <input type="text" class="form-control" id="gst_2" name="gst_2" placeholder="GST"
+                required>
+        </div>
+        <div class="col-3">
+            <label for="total" class="form-label">Total</label>
+            <input type="text" class="form-control" id="total" name="total" placeholder="Total(A + GST + HSA + GST)"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="paidby" class="form-label">Paid By</label>
+            <input type="text" class="form-control" id="paidby" name="paidby" placeholder="Paid By"
+                required>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary" style="background-color:black">Submit</button>
+        </div>
+        <div class="col-1">
+            <button type="reset" class="btn btn-primary" style="background-color:black">Reset</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock body %}
+
+
+

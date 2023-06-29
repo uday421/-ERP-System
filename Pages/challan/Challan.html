@@ -1,0 +1,59 @@
+{% extends 'base2.html' %}
+
+{% block title %} Challan {% endblock title %}
+
+{% block body %}
+
+<div style="margin:-3% 20% 0% 20%;padding: 2% 2%;background-color:white;border-radius:12px;box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+
+    <h2>Challan</h2>
+    <br>
+
+    <form class="row g-3" method='post' action='/handleChallan'>
+
+        {% csrf_token %}
+
+        <div class="col-6">
+            <label for="challanno" class="form-label">Challan No</label>
+            <input type="number" class="form-control" id="challanno" name="challanno" placeholder="Challan No:"
+                required>
+        </div>
+        <div class="col-6">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" name="date" placeholder="Date"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="challanto" class="form-label">Customer</label>
+            <input type="text" class="form-control" id="challanto" name="challanto" placeholder="Customer"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="particulars" class="form-label">Particulars</label>
+            <input type="text" class="form-control" id="particulars" name="particulars" placeholder="Particulars"
+                required>
+        </div>
+        <div class="col-12">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Quantity"
+                required>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary" style="background-color:black">Submit</button>
+        </div>
+        <div class="col-1">
+            <button type="reset" class="btn btn-primary" style="background-color:black">Reset</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock body %}
+
+
+
+

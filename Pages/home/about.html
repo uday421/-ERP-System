@@ -1,0 +1,98 @@
+{% extends 'base4.html' %}
+
+{% load static %}
+
+{% block title %} About{% endblock title %}
+
+{% block body %}
+   
+    
+<div class="jumbotron text-center shadow-lg" style="background-color: rgba(41, 44, 45, 0.784);  padding:50px ;margin: 100px; border-radius: 25px;">
+    <h1 class="text-white ">About us</h1>
+</div>
+<footer class="bg-dark text-center text-white">
+  <!-- Copyright -->
+  <!-- Section: Links  -->
+  <section style="padding:10px">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <img src="{% static 'images/icon12.png' %}" alt="icon" height="93%" width="93%" style="border-radius:12px">
+        </div>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Content -->
+          <p>
+            "ERP Solutions provides you an absolute solution for your company’s difficulties arise in
+            storing data. It is expected to be the best solution for turning components companies."
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <a name="Contact">Contact</a>
+          </h6>
+          <p><i class="fas fa-home me-3"></i> Datte Mandir,  Dhule 424001, India</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            udaybadgujar3421@hotmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 91 9325 105 880</p>
+          <p><i class="fas fa-phone me-3"></i> + 91 7219 047 814</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;"
+        href="https://en-gb.facebook.com/" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;"
+        href="https://twitter.com/?lang=en-in" role="button" target="_blank"><i class="fab fa-twitter"></i></a>
+
+      <!-- Google -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="https://www.google.co.in/"
+        role="button" target="_blank"><i class="fab fa-google"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="https://www.instagram.com/"
+        role="button" target="_blank"><i class="fab fa-instagram"></i></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="https://in.linkedin.com/"
+        role="button" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <!-- Github -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="https://github.com/"
+        role="button" target="_blank"><i class="fab fa-github"></i></a>
+
+      <a href="#top" class="btn btn-primary btn-floating m-1" role="button" title="Go to Top"
+        style="background-color: #262626;float: right">
+        <i class="fas fa-angle-double-up fa-3x"></i>
+      </a>
+
+    </section>
+    <!-- Section: Social media -->
+
+  </div>
+  <!-- Grid container -->
+
+  <div style="background-color:black;padding:20px">© 2023 ERP Solutions. All Rights Reserved | Design By
+    Vaishnavi Ahire || Uday Badgujar || Nimesh Patel || Nilesh Chaudhari</div>
+  <!-- Copyright -->
+</footer>
+
+
+{% endblock body %}

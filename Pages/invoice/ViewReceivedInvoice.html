@@ -1,0 +1,108 @@
+{% extends 'base2.html' %}
+
+{% block title %} View Received Invoice {% endblock title %}
+
+{% block body %}
+
+<div style="margin:-3% 15% 0% 15%;padding: 3% 0%;background-color:white;border-radius:12px;box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.7);">
+
+
+    <h1 style="text-align:center">Received Invoice</h1>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+
+        <div class="table table-responsive table-hover">
+            <table class="table">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">InvoiceNo</th>
+                        <th scope="col">Supplier</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Delivery Note</th>
+                        <th scope="col">Mode Terms Of Payment</th>
+                        <th scope="col">Supplier Reference</th>
+                        <th scope="col">Other Reference</th>
+                        <th scope="col">OrderNo</th>
+                        <th scope="col">Delivery Note Date</th>
+                        <th scope="col">Despatched Document No</th>
+                        <th scope="col">Despatched Through</th>
+                        <th scope="col">Terms Of Delivery</th>
+                        <th scope="col">Particulars</th>
+                        <th scope="col">HSN_SAC</th>
+                        <th scope="col">Quantity(Q)</th>
+                        <th scope="col">Rate(R)</th>
+                        <th scope="col">Amount(QxR=A)</th>
+                        <th scope="col">GST</th>
+                        <th scope="col">HSN_SAC_Amount(HSA)</th>
+                        <th scope="col">GST</th>
+                        <th scope="col">Total(A+GST+HSA+GST)</th>
+                        <th scope="col">PaidBy</th>
+                    </tr>
+                </thead>
+                <tbody style="font-size:15px">
+                    <tr>
+                        <th scope="row">{{received_invoice.0.InvoiceNo}}</th>
+                        <td>{{received_invoice.0.Supplier}}</td>
+                        <td>{{received_invoice.0.Date}}</td>
+                        <td>{{received_invoice.0.Delivery_Note}}</td>
+                        <td>{{received_invoice.0.Mode_Terms_Of_Payment}}</td>
+                        <td>{{received_invoice.0.Supplier_Reference}}</td>
+                        <td>{{received_invoice.0.Other_Reference}}</td>
+                        <td>{{received_invoice.0.OrderNo}}</td>
+                        <td>{{received_invoice.0.Delivery_Note_Date}}</td>
+                        <td>{{received_invoice.0.Despatched_Document_No}}</td>
+                        <td>{{received_invoice.0.Despatched_Through}}</td>
+                        <td>{{received_invoice.0.Terms_Of_Delivery}}</td>
+                        <td>{{received_invoice.0.Particulars}}</td>
+                        <td>{{received_invoice.0.HSN_SAC}}</td>
+                        <td>{{received_invoice.0.Quantity}}</td>
+                        <td>{{received_invoice.0.Rate}}</td>
+                        <td>{{received_invoice.0.Amount}}</td>
+                        <td>{{received_invoice.0.GST_1}}</td>
+                        <td>{{received_invoice.0.HSN_SAC_Amount}}</td>
+                        <td>{{received_invoice.0.GST_2}}</td>
+                        <td>{{received_invoice.0.Total}}</td>
+                        <td>{{received_invoice.0.PaidBy}}</td>
+                    </tr>
+
+                    {% for i in received_invoice|slice:"1:"%}
+                    <tr>
+                        <th scope="row">{{i.InvoiceNo}}</th>
+                        <td>{{i.Supplier}}</td>
+                        <td>{{i.Date}}</td>
+                        <td>{{i.Delivery_Note}}</td>
+                        <td>{{i.Mode_Terms_Of_Payment}}</td>
+                        <td>{{i.Supplier_Reference}}</td>
+                        <td>{{i.Other_Reference}}</td>
+                        <td>{{i.OrderNo}}</td>
+                        <td>{{i.Delivery_Note_Date}}</td>
+                        <td>{{i.Despatched_Document_No}}</td>
+                        <td>{{i.Despatched_Through}}</td>
+                        <td>{{i.Terms_Of_Delivery}}</td>
+                        <td>{{i.Particulars}}</td>
+                        <td>{{i.HSN_SAC}}</td>
+                        <td>{{i.Quantity}}</td>
+                        <td>{{i.Rate}}</td>
+                        <td>{{i.Amount}}</td>
+                        <td>{{i.GST_1}}</td>
+                        <td>{{i.HSN_SAC_Amount}}</td>
+                        <td>{{i.GST_2}}</td>
+                        <td>{{i.Total}}</td>
+                        <td>{{i.PaidBy}}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock body %}
